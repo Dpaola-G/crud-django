@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h3>AGREGAR PELICULA </h3>
+        <form action="./agregarPelicula/" method="post">
+
+            @{%csrf_token%}
+            <div>
+                <label for="txtCodigo" class=""fw-bold>Codigo:</label>
+                <input type="text" name="txtCodigo" id="txtCodigo" class="form-control">
+            </div>
+            <div>
+                <label for="txtProtagonista" class=""fw-bold>Protagonista:</label>
+                <input type="text" name="txtProtagonista" id="txtProtagonista" class="form-control">
+            </div>
+            <div>
+                <label for="txtDuracion" class=""fw-bold>Duracion:</label>
+                <input type="text" name="txtDuracion" id="txtDuracion" class="form-control">
+            </div>
+            <div>
+                <label for="cbGenero"class=""fw-bold>Genero</label>
+                <select name="cdGenero" id="">
+                    <option value="">seleccione</option>
+                    {%for g in generos%}
+                    <option value="{{g.id}}">{{g.genNombre}}</option>
+                    {%endfor%}
+                </select>
+</div>
+            <div>
+                <label for: "fileFoto"  class=""fw-bold>FOoto</label>
+                <input type="file" name="fileFoto" id="">
+            </div>
+        </form>
+    </div>            
+</body>
+</html>
